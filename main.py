@@ -18,5 +18,3 @@ while a==False:
         print("I don't understand, could you repeat?")
         a=False
 
-
-print('prova')
