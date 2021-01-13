@@ -1,6 +1,6 @@
 """agent.py
 """
-from agent.interactions import US_AG_INTERACTION_MAP, US_AG_RESPONSE_MAP
+from interactions import US_AG_INTERACTION_MAP, US_AG_RESPONSE_MAP
 import re
 
 
