@@ -10,11 +10,12 @@ speaker = Speaker()
 listener = Listener()
 agent0 = Agent(speaker, listener)
 
-agent0.process('phrase3')
+print('hello my name is emanuele')
+agent0.process('hello my name is emanuele')
 
 exit(0)
 
-speaker.speak('Hello, how can I help you?') 
+speaker.speak('Hello, how can I help you?')
 
 a=False
 while a==False:
