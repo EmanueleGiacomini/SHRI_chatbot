@@ -1,0 +1,16 @@
+{
+    "regioni":[
+	{
+	    "regione":"lazio",
+	    "contagiati":10000,
+	    "guariti":2000,
+	    "morti":12
+	},
+	{
+	    "regione":"abruzzo",
+	    "contagiati":1500,
+	    "guariti":200,
+	    "morti":1
+	}
+    ]
+}
