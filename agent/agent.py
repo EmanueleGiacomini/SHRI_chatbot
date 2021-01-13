@@ -45,7 +45,7 @@ def agent_inter1_cb(speaker, inter_args):
     return
 
 def agent_not_understood_cb(speaker):
-    speaker.speak('I did not understand.')
+    speaker.speak('Non ho capito.')
 
 def agent_greet1_cb(speaker, inter_args):
     response_lst = US_AG_RESPONSE_MAP['greet1']

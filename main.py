@@ -10,22 +10,22 @@ speaker = Speaker()
 listener = Listener()
 agent0 = Agent(speaker, listener)
 
-print('hello my name is emanuele')
-agent0.process('hello my name is emanuele')
+print('Ciao il mio nome è Emanuele')
+agent0.process('Ciao il mio nome è Emanuele')
 
 exit(0)
 
-speaker.speak('Hello, how can I help you?')
+speaker.speak('Ciao come posso aiutarti?')
 
 a=False
 while a==False:
     command,taken=listener.listen()
 
-    if command=='goodbye':
-        speaker.speak("Thank you, bye")
+    if command=='arrivederci':
+        speaker.speak("Grazie e arrivederci")
         break
 
     if taken==False:
-        print("I don't understand, could you repeat?")
+        print("Non ho capito, puoi ripetere?")
         a=False
 

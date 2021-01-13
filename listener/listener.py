@@ -10,14 +10,14 @@ class Listener():
 
         with sr.Microphone() as source:
             r.adjust_for_ambient_noise(source)
-            print("I'm listening. . .")
+            print("Sto ascoltando. . .")
             audio=r.listen(source)
 
             sentence=""
             taken=True
             try:
-                sentence=r.recognize_google(audio)
-                print("You have said", sentence)
+                sentence=r.recognize_google(audio, language='it-IT')
+                print("Tu hai detto: ", sentence)
             except sr.UnknownValueError:                            # speech is unintelligible
                 taken=False
 
