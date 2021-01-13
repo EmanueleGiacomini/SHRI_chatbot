@@ -9,7 +9,7 @@ class Speaker:
         self.engine.setProperty('rate', 115)
 
         voices = self.engine.getProperty('voices')
-        self.engine.setProperty('voice', voices[1].id)
+        self.engine.setProperty('voice', voices[0].id)
 
     def speak(self, sentence):
         self.engine.say(sentence)
