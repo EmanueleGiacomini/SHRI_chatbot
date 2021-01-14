@@ -19,14 +19,13 @@ US_AG_INTERACTION_MAP = {
     'int15': ['Quali sono i sintomi lievi del (covid|coronavirus)','Dimmi i sintomi lievi del (covid|coronavirus)'],
     'int16': ['Quali sono i sintomi gravi del (covid|coronavirus)','Dimmi i sintomi gravi del (covid|coronavirus)'],
     'int17': ['Quali sono i paesi più colpiti dal (covid|coronavirus)','Dimmi i paesi più colpiti dal (covid|coronavirus)','Quali sono i paesi più colpiti','Dimmi i paesi più colpiti'],
-    'int18': ['I paesi più colpiti sono gli (USA|Stati Uniti)'],  #memorizzare
+    'int18': ['I paesi più colpiti sono gli (USA|Stati Uniti)'],
     'int19': ['Farai il vaccino'],
-    'int20': ['Posso andare al (bar|ristorante)','Dimmi se posso andare al (bar|ristorante)'],
+    'int20': ['Posso fare un aperitivo','Posso fare aperitivo'],
     'int21': ['I cinema sono aperti','Dimmi se i cinema sono aperti'],
-    'int22': ['Oltre le 22 c\'è il coprifuoco','I musei e le mostre sono chiuse','Le palestre sono chiuse'], #memorizzare
-    'int23': ['Posso cenare al ristorante'],
+    'int22': ['No, non l\'ho fatto', 'No', 'Ancora no'],
+    'int23': ['Posso cenare fuori'],
     #'int24': ['Dimmi la popolazione di (.*)', 'Qual è la popolazione di (.*)', 'Quanti abitanti ci sono in (.*)'],
-    'int25': ['No, non l\'ho fatto', 'No', 'Ancora no'],
     'greet1': ['Ciao sono (.*)', 'Ciao il mio nome è (.*)'],
 
     # TODO
@@ -50,14 +49,13 @@ US_AG_RESPONSE_MAP = {
     'int15':['Tosse secca, febbre e spossatezza, perdita di gusto e olfatto'],
     'int16':['Difficoltà respiratoria', 'Fiato corto','Difficoltà respiratoria, fiato corto'],
     'int17': ['Stati uniti, India, Brasile, Russia'],
-    'int18' : ['Ok, memorizzo'],
+    'int18' : ['Grazie per l\'informazione'],
     'int19': ['Certo'],
-    'int20': ['Dipende dal colore della tua zona','In zona rossa o arancione no','Prima delle 18 in zona gialla'],
+    'int20': ['Solo a casa','Prima delle 18 in zona gialla'],
     'int21': ['No sono chiusi'],
-    'int22': ['Ok memorizzo'],
+    'int22': ['Allora dovresti farlo','Forse è il caso di farlo'],
     'int23': ['No, solo asporto'],
     #'int24': ['(.*) ha ... abitanti', 'La popolazione è ...'],
-    'int25': ['Allora dovresti farlo','Forse è il caso di farlo'],
     'greet1': ['Ciao {name}, come posso aiutarti?']
     #TODO
 }
