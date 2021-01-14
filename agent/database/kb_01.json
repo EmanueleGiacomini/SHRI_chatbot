@@ -2,15 +2,123 @@
     "regioni":[
 	{
 	    "regione":"lazio",
-	    "contagiati":10000,
+	    "contagiati":163051,
 	    "guariti":2000,
-	    "morti":12
+	    "morti":3769
 	},
 	{
 	    "regione":"abruzzo",
 	    "contagiati":1500,
 	    "guariti":200,
 	    "morti":1
+	},
+	{
+		"regione":"Basilicata",
+		"contagiati":null,
+		"guariti":null,
+		"morti":null
+	},
+	{
+		"regione":"Calabria",
+		"contagiati":null,
+		"guariti":null,
+		"morti":null
+	},
+	{
+		"regione":"Campania",
+		"contagiati":null,
+		"guariti":null,
+		"morti":null
+	},
+	{
+		"regione":"Emilia romagna",
+		"contagiati":null,
+		"guariti":null,
+		"morti":null
+	},
+	{
+		"regione":"Friuli venezia giulia",
+		"contagiati":null,
+		"guariti":null,
+		"morti":null
+	},
+	{
+		"regione":"Liguria",
+		"contagiati":null,
+		"guariti":null,
+		"morti":null
+	},
+	{
+		"regione":"Lombardia",
+		"contagiati":null,
+		"guariti":null,
+		"morti":null
+	},
+	{
+		"regione":"Marche",
+		"contagiati":null,
+		"guariti":null,
+		"morti":null
+	},
+	{
+		"regione":"Molise",
+		"contagiati":null,
+		"guariti":null,
+		"morti":null
+	},
+	{
+		"regione":"Piemonte",
+		"contagiati":null,
+		"guariti":null,
+		"morti":null
+	},
+	{
+		"regione":"Trentino alto adige",
+		"contagiati":null,
+		"guariti":null,
+		"morti":null
+	},
+	{
+		"regione":"Puglia",
+		"contagiati":null,
+		"guariti":null,
+		"morti":null
+	},
+	{
+		"regione":"Sardegna",
+		"contagiati":null,
+		"guariti":null,
+		"morti":null
+	},
+	{
+		"regione":"Sicilia",
+		"contagiati":null,
+		"guariti":null,
+		"morti":null
+	},
+	{
+		"regione":"Toscana",
+		"contagiati":null,
+		"guariti":null,
+		"morti":null
+	},
+	{
+		"regione":"Umbria",
+		"contagiati":null,
+		"guariti":null,
+		"morti":null
+	},
+	{
+		"regione":"Valle d'aosta",
+		"contagiati":null,
+		"guariti":null,
+		"morti":null
+	},
+	{
+		"regione":"Veneto",
+		"contagiati":null,
+		"guariti":null,
+		"morti":null
 	}
     ]
 }
