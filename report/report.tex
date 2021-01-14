@@ -1,0 +1,79 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage[english]{babel}\usepackage{subcaption}
+\usepackage{sidecap}
+\usepackage{lipsum}
+\usepackage{multicol}
+\usepackage{sectsty}
+\usepackage{caption}
+\usepackage{placeins}
+\usepackage{subcaption}
+\usepackage{bm}
+\usepackage[dvipsnames]{xcolor}
+
+\definecolor{myred}{RGB}{143, 42, 12}
+\definecolor{myblue}{RGB}{58, 83, 197}
+\definecolor{myorange}{RGB}{219, 146, 0}
+\newcommand{\centered}[1]{\begin{tabular}{l} #1 \end{tabular}}
+
+% \sectionfont{\centering}
+\usepackage[a4paper,top=2cm,bottom=2cm,left=2cm,right=2cm]{geometry}
+\title{\textbf{ }}
+\date{}
+
+\begin{document}
+
+\begin{titlepage}
+    \begin{center}
+        \includegraphics[width=0.4 \textwidth] {logo.eps}\\
+        \vspace{10 em}
+        {\Large \textbf{Artificial Intelligence}}\\
+        \vspace{3em}
+        {\Large \textsc{Academic Year 2020/2021}}\\
+        \vspace{8 em}
+        {\huge \textbf{Spoke Human-Robot Interaction}}\\
+        \vspace{3 em}
+        {\large Rossella Bonuomo, 1923211}\\
+        \vspace{1 em}
+        {\large Emanuele Giacomiin, 1743995}\\
+        \vspace{1 em}
+        {\large Veronica Vulcano, 1760405}
+        \vspace{10 em}\\
+        {\Large \textit{Master's Degree in Artificial Intelligence and Robotics}}
+    \end{center}
+\end{titlepage}
+
+\maketitle
+\tableofcontents
+\pagebreak
+
+\section{Introduction}
+The goal of this project is to build a spoken dialogue system in order to let the user talk with the agent about the COVID-19 emergency. The user can ask information about the number of infected, cured and dead patients in each Italian region; then, he can ask also some statistical information (e.g., percentage of infected/cured/dead patients by region) because the agent knows also the population of each region. In addition, the agent is learned about how to behave when:
+\begin{itemize}
+\item The user does not feel well; by considering the user's symptomes, the agent suggests him what he should do.
+\item The user has met an infected person.
+\item The user is  infected.
+\end{itemize}
+We remind that the data stored in the knowledge base of the agent are acquired until $31^{st}$ december 2020.
+\section{Implementation}
+The project is composed of three main modules:
+\begin{itemize}
+\item Listener
+\item Speaker
+\item Agent
+\end{itemize}
+\subsection{Listener}
+The listener module uses the speech recognition library to take an audio input from the user microphone and to analyse it. In fact, the voice command is stored in a string to be used from the other modules. The speech recognition that we have used is the one from Google.\\\\
+\textbf{foto codice}\\\\
+To incentivize the user to speak we print the sentence "Sto ascoltando..."; when this sentence appears, the user is aware that he can start talking with the agent. Moreover, to be sure that the signal is acquired properly, we print the understood sentence.
+\subsection{Speaker}
+The speaker module enables the agent to say something. In order to implement it, we have imported the library \textit{pyttsx3}, which is a text-to-speech conversion library from Python.\\\\
+\textbf{foto codice}\\\\
+We have set the volume level, the speaking rate and some properties of the voice. Then, we have defined the \textit{speak} function which is called in main.py in order to let the agent talk; in fact, this function takes as input the string that the agent has to say.
+\subsection{Agent}
+...
+
+\end{document}
