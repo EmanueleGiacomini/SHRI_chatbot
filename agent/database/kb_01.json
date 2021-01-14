@@ -150,7 +150,7 @@
 	],
 	"zone":[
 		{
-			"colore":"rosso",
+			"colore":"rossa",
 			"uscire":null,
 			"bar":null,
 			"ristorante":null,
@@ -184,7 +184,7 @@
 			"farmacia":null
 		},
 		{
-			"colore":"giallo",
+			"colore":"gialla",
 			"uscire":null,
 			"bar":null,
 			"ristorante":null,
