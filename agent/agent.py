@@ -50,6 +50,8 @@ class Agent:
             'int21':agent_autores_cb,
             'int22':None,
             'int23':agent_autores_cb,
+            'int24':agent_autores_cb,
+            'int25':agent_autores_cb,
             'askzone1':agent_askzone1_cb,
             'setzone1':agent_setzone1_cb,
             'askregion1': agent_askregion1_cb,
