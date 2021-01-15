@@ -59,12 +59,14 @@ class Agent:
 
     def process(self, in_text: str):
         inter, inter_args = process_text(in_text)
+        response = None
         if inter is None:
-            self.handle_fn['NOT_UNDERSTOOD'](self.speaker)
-            return
-        # Inter and inter_args can be used
-        #print(f'matched signal: {inter}')
-        self.handle_fn[inter](self.speaker, inter,  inter_args, self.kb)
+            response = self.handle_fn['NOT_UNDERSTOOD'](self.speaker)
+        else:
+            # Inter and inter_args can be used
+            response = self.handle_fn[inter](self.speaker, inter,  inter_args, self.kb)
+        print(response)
+        self.speaker.speak(response)
 
 
 def agent_inter1_cb(speaker, inter_args):
@@ -72,16 +74,16 @@ def agent_inter1_cb(speaker, inter_args):
     return
 
 def agent_not_understood_cb(speaker):
-    speaker.speak('Non ho capito.')
+    return "Non ho capito"
 
-def agent_greet1_cb(speaker, inter, inter_args, kb=None):
+def agent_greet1_cb(speaker, inter, inter_args, kb=None) -> str:
     response_lst = US_AG_RESPONSE_MAP['greet1']
     # Sample a response
     response = response_lst[0]
-    print(response.format(name=inter_args[0]))
-    speaker.speak(response.format(name=inter_args[0]))
+    response = response.format(name=inter_args[0])
+    return response
 
-def agent_autores_cb(speaker, inter, inter_args, kb=None):
+def agent_autores_cb(speaker, inter, inter_args, kb=None) -> str:
     """ 
     Default auto-response callback
     Automatically answer to the user with one of the predefined answers
@@ -94,10 +96,9 @@ def agent_autores_cb(speaker, inter, inter_args, kb=None):
         response = response_lst[0]
     else:
         response = random.choice(response_lst)
-    print(response)
-    speaker.speak(response)
+    return response
 
-def agent_askzone1_cb(speaker, inter, inter_args, kb=None):
+def agent_askzone1_cb(speaker, inter, inter_args, kb=None) -> str:
     """
     Query callback. The function uses inter_args to query the KB and extract
     user requested informations.
@@ -107,13 +108,15 @@ def agent_askzone1_cb(speaker, inter, inter_args, kb=None):
     color_zone = kb.get_zone(inter_args[0])
     location = color_zone[inter_args[2]]
     if location is None:
-        print("Non ti so dire nulla a riguardo")
-    elif location is True:
-        print(f'In zona {inter_args[0]} si puo andare {inter_args[1]} {inter_args[2]}')
-    elif location is False:
-        print(f'In zona {inter_args[0]} non si puo andare {inter_args[1]} {inter_args[2]}')
+        return "Non ti so dire nulla a riguardo"
+    response = None
+    if location is True:
+        response = f'In zona {inter_args[0]} si puo andare {inter_args[1]} {inter_args[2]}'
+    else:
+        response = f'In zona {inter_args[0]} non si puo andare {inter_args[1]} {inter_args[2]}'
+    return response
 
-def agent_setzone1_cb(speaker, inter, inter_args, kb=None):
+def agent_setzone1_cb(speaker, inter, inter_args, kb=None) -> str:
     """
     Set query callback. The function uses inter_args to write inside the KB
     """
@@ -121,10 +124,9 @@ def agent_setzone1_cb(speaker, inter, inter_args, kb=None):
     key = inter_args[2]
     kb.set_dato(color_zone, key, 'posso')
     response = f'Salvo che in zona {color_zone}  si puo andare {inter_args[1]} {key}'
-    print(response)
-    speaker.speak(response)
+    return response
 
-def agent_askregion1_cb(speaker, inter, inter_args, kb=None):
+def agent_askregion1_cb(speaker, inter, inter_args, kb=None) -> str:
     """
     Query callback. The function uses inter_args to query the KB and extract
     user requested informations.
@@ -133,10 +135,13 @@ def agent_askregion1_cb(speaker, inter, inter_args, kb=None):
     prop = inter_args[1]
     key = inter_args[0]
     region = kb.get_region(reg_name)
+    response = None
+    
     if region is not None:
-        print(f'Il numero di {key} {prop} {reg_name} è {region[key]}')
+        response = f'Il numero di {key} {prop} {reg_name} è {region[key]}'
     else:
-        print(f'Non ho informazioni per questa regione')   
+        response = f'Non ho informazioni per questa regione'
+    return response
     
     
 
