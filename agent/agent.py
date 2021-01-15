@@ -51,7 +51,8 @@ class Agent:
             'int21':agent_autores_cb,
             'int22':None,
             'int23':agent_autores_cb,
-            'askzone1':agent_askzone1_cb
+            'askzone1':agent_askzone1_cb,
+            'setzone1':agent_setzone1_cb
         }
         self.kb = KB(path)
 
@@ -115,6 +116,7 @@ def agent_setzone1_cb(speaker, inter, inter_args, kb=None):
     """
     Set query callback. The function uses inter_args to write inside the KB
     """
+    ...
     
     
     
