@@ -20,27 +20,27 @@ class KB:
          with open(f"./agent/database/{datetime.now().strftime('%Y%m%d-%H%M%S')}_kb.json", 'x') as outfile:
             json.dump(d, outfile)
 
-    def get_region(self,key,data):
-        N=len(data["regioni"])
+    def get_region(self,key):
+        kb = self.kb["regioni"]
+        N=len(kb)
 
         for i in range(N):
-            if data["regioni"][i]['regioni']==key:
-                return data["regioni"][i]
+            if kb[i]['regioni']==key:
+                return kb[i]
 
-    def get_dato(self,key,data):
-        return data[key]
+    def get_dato(self,key):
+        return self.kb[key]
 
     def set_dato(self,color,key,word):
-        with open(f"./agent/database/kb_01.json") as json_file:
-            data = json.load(json_file)
-            N=len(data["zone"])
-            for i in range(N):
-                if data["zone"][i]['colore']==color:
-                    elem =  data["zone"][i]
-                    if word == "posso":
-                        elem[key] = True
-                    elif word == "non posso":
-                        elem[key] = False
+        kb = self.kb["zone"]
+        N=len(kb)
+        for i in range(N):
+            if kb[i]['colore']==color:
+                elem =  kb[i]
+                if word == "posso":
+                    elem[key] = True
+                elif word == "non posso":
+                    elem[key] = False
         with open(f"./agent/database/kb_01.json","w") as js_file:
             js_file.write(json.dumps(data))
 
