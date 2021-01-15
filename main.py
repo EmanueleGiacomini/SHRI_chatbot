@@ -8,12 +8,13 @@ from agent.agent import Agent
 
 speaker = Speaker()
 listener = Listener()
-agent0 = Agent(speaker, listener)
+agent0 = Agent(speaker, listener, './database/kb_01.json')
 
 #print('Ciao il mio nome è Emanuele')
-#agent0.process('Ciao il mio nome è Emanuele')
+#agent0.process('Dimmi se in zona rossa si puo andare al cinema')
+agent0.process('In zona rossa si puo andare al cinema')
 
-#exit(0)
+exit(0)
 
 speaker.speak('Ciao come posso aiutarti?')
 

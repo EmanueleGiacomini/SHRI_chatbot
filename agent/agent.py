@@ -1,6 +1,7 @@
 """agent.py
 """
 from agent.interactions import US_AG_INTERACTION_MAP, US_AG_RESPONSE_MAP
+from agent.kb_handler import KB
 import re
 import random
 
@@ -21,7 +22,7 @@ def process_text(in_text: str):
 
 
 class Agent:
-    def __init__(self, speaker, listener):
+    def __init__(self, speaker, listener, path=None):
         self.speaker = speaker
         self.listener = listener
         self.handle_fn = {
@@ -49,9 +50,10 @@ class Agent:
             'int20':agent_autores_cb,
             'int21':agent_autores_cb,
             'int22':None,
-            'int23':agent_autores_cb
+            'int23':agent_autores_cb,
+            'askzone1':agent_askzone1_cb
         }
-        ...
+        self.kb = KB(path)
 
     def process(self, in_text: str):
         inter, inter_args = process_text(in_text)
@@ -60,7 +62,7 @@ class Agent:
             return
         # Inter and inter_args can be used
         #print(f'matched signal: {inter}')
-        self.handle_fn[inter](self.speaker, inter,  inter_args)
+        self.handle_fn[inter](self.speaker, inter,  inter_args, self.kb)
 
 
 def agent_inter1_cb(speaker, inter_args):
@@ -70,14 +72,14 @@ def agent_inter1_cb(speaker, inter_args):
 def agent_not_understood_cb(speaker):
     speaker.speak('Non ho capito.')
 
-def agent_greet1_cb(speaker, inter, inter_args):
+def agent_greet1_cb(speaker, inter, inter_args, kb=None):
     response_lst = US_AG_RESPONSE_MAP['greet1']
     # Sample a response
     response = response_lst[0]
     print(response.format(name=inter_args[0]))
     speaker.speak(response.format(name=inter_args[0]))
 
-def agent_autores_cb(speaker, inter, inter_args):
+def agent_autores_cb(speaker, inter, inter_args, kb=None):
     """ 
     Default auto-response callback
     Automatically answer to the user with one of the predefined answers
@@ -92,6 +94,29 @@ def agent_autores_cb(speaker, inter, inter_args):
         response = random.choice(response_lst)
     print(response)
     speaker.speak(response)
+
+def agent_askzone1_cb(speaker, inter, inter_args, kb=None):
+    """
+    Query callback. The function uses inter_args to query the KB and extract
+    user requested informations.
+    """
+    #print(inter_args)
+    # TODO(Fix KB functions and remake this part)
+    color_zone = kb.get_zone(inter_args[0])
+    location = color_zone[inter_args[2]]
+    if location is None:
+        print("Non ti so dire nulla a riguardo")
+    elif location is True:
+        print(f'In zona {inter_args[0]} si puo andare {inter_args[1]} {inter_args[2]}')
+    elif location is False:
+        print(f'In zona {inter_args[0]} non si puo andare {inter_args[1]} {inter_args[2]}')
+
+def agent_setzone1_cb(speaker, inter, inter_args, kb=None):
+    """
+    Set query callback. The function uses inter_args to write inside the KB
+    """
+    
+    
     
 
 

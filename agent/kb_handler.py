@@ -44,6 +44,16 @@ class KB:
         with open(f"./agent/database/kb_01.json","w") as js_file:
             js_file.write(js.dumps(data))
 
+    ## TODO FUNCTIONS
+    def get_zone(self, color):
+        kb = self.kb['zone']
+        for entry in kb:
+            if entry['colore'] == color:
+                return entry
+        return None
+            
+        
+
 
 
 

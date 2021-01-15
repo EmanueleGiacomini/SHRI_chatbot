@@ -27,6 +27,9 @@ US_AG_INTERACTION_MAP = {
     'int23': ['Posso cenare fuori'],
     #'int24': ['Dimmi la popolazione di (.*)', 'Qual è la popolazione di (.*)', 'Quanti abitanti ci sono in (.*)'],
     'greet1': ['Ciao sono (.*)', 'Ciao il mio nome è (.*)'],
+    'askzone1': ['Dimmi se in zona (?P<zona>[a-z]+) si puo andare (al|nei) (?P<luogo>[a-z]+)'],
+    'setzone1': ['In zona (?P<zona>[a-z]+) si puo andare (al|nei) (?P<luogo>[a-z]+)']
+    
 
     # TODO
 }
@@ -56,6 +59,8 @@ US_AG_RESPONSE_MAP = {
     'int22': ['Allora dovresti farlo','Forse è il caso di farlo'],
     'int23': ['No, solo asporto'],
     #'int24': ['(.*) ha ... abitanti', 'La popolazione è ...'],
-    'greet1': ['Ciao {name}, come posso aiutarti?']
+    'greet1': ['Ciao {name}, come posso aiutarti?'],
+    'askzone1': [],
+    'setzone1': []
     #TODO
 }
