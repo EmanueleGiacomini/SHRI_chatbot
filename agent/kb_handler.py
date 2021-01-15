@@ -41,8 +41,7 @@ class KB:
                     elem[key] = True
                 elif word == "non posso":
                     elem[key] = False
-        with open(f"./agent/database/kb_01.json","w") as js_file:
-            js_file.write(json.dumps(self.kb))
+        return self.kb
 
     ## TODO FUNCTIONS
     def get_zone(self, color):
