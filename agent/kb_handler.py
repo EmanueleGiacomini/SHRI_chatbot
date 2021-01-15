@@ -32,7 +32,7 @@ class KB:
 
     def set_dato(self,color,key,word):
         with open(f"./agent/database/kb_01.json") as json_file:
-            data = js.load(json_file)
+            data = json.load(json_file)
             N=len(data["zone"])
             for i in range(N):
                 if data["zone"][i]['colore']==color:
@@ -42,7 +42,7 @@ class KB:
                     elif word == "non posso":
                         elem[key] = False
         with open(f"./agent/database/kb_01.json","w") as js_file:
-            js_file.write(js.dumps(data))
+            js_file.write(json.dumps(data))
 
     ## TODO FUNCTIONS
     def get_zone(self, color):
