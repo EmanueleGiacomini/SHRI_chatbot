@@ -19,7 +19,6 @@ US_AG_INTERACTION_MAP = {
     'int15': ['Quali sono i sintomi lievi del (covid|coronavirus)','Dimmi i sintomi lievi del (covid|coronavirus)'],
     'int16': ['Quali sono i sintomi gravi del (covid|coronavirus)','Dimmi i sintomi gravi del (covid|coronavirus)'],
     'int17': ['Quali sono i paesi più colpiti dal (covid|coronavirus)','Dimmi i paesi più colpiti dal (covid|coronavirus)','Quali sono i paesi più colpiti','Dimmi i paesi più colpiti'],
-    'int18': ['I paesi più colpiti sono gli (USA|Stati Uniti)'],
     'int19': ['Farai il vaccino'],
     'int20': ['Posso fare un aperitivo','Posso fare aperitivo'],
     'int21': ['I cinema sono aperti','Dimmi se i cinema sono aperti'],
@@ -29,7 +28,12 @@ US_AG_INTERACTION_MAP = {
     'greet1': ['Ciao sono (.*)', 'Ciao il mio nome è (.*)'],
     'askzone1': ['Dimmi se in zona (?P<zona>[a-z]+) si puo andare (al|nei) (?P<luogo>[a-z]+)',
                  'Dimmi se in zona (?P<zona>[a-z]+) si (puo) (?P<luogo>[a-z]+)'],
-    'setzone1': ['In zona (?P<zona>[a-z]+) si puo andare (al|nei) (?P<luogo>[a-z]+)']
+    'setzone1': ['In zona (?P<zona>[a-z]+) si puo andare (al|nei) (?P<luogo>[a-z]+)'],
+    'askregion1':['Quanti sono i (contagiati|guariti|morti) (in|nel) (?P<luogo>[a-z]+)',
+                  'Dimmi il numero di (contagiati|guariti|morti) (in|nel) (?P<luogo>[a-z]+)',
+                  'Qual è il numero di (contagiati|guariti|morti) (in|nel) (?P<luogo>[a-z]+)'],
+    'askregion2':['Dimmi la (popolazione) (di|del) (?P<luogo>[a-z]+)',
+                  'Qual è la (popolazione) (di|del) (?P<luogo>[a-z]+)']
     
 
     # TODO

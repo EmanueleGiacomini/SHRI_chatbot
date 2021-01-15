@@ -45,14 +45,15 @@ class Agent:
             'int15':agent_autores_cb,
             'int16':agent_autores_cb,
             'int17':agent_autores_cb,
-            'int18':None,
             'int19':agent_autores_cb,
             'int20':agent_autores_cb,
             'int21':agent_autores_cb,
             'int22':None,
             'int23':agent_autores_cb,
             'askzone1':agent_askzone1_cb,
-            'setzone1':agent_setzone1_cb
+            'setzone1':agent_setzone1_cb,
+            'askregion1': agent_askregion1_cb,
+            'askregion2': agent_askregion1_cb
         }
         self.kb = KB(path)
 
@@ -116,8 +117,26 @@ def agent_setzone1_cb(speaker, inter, inter_args, kb=None):
     """
     Set query callback. The function uses inter_args to write inside the KB
     """
-    ...
-    
+    color_zone = inter_args[0]
+    key = inter_args[2]
+    kb.set_dato(color_zone, key, 'posso')
+    response = f'Salvo che in zona {color_zone}  si puo andare {inter_args[1]} {key}'
+    print(response)
+    speaker.speak(response)
+
+def agent_askregion1_cb(speaker, inter, inter_args, kb=None):
+    """
+    Query callback. The function uses inter_args to query the KB and extract
+    user requested informations.
+    """
+    reg_name = inter_args[2]
+    prop = inter_args[1]
+    key = inter_args[0]
+    region = kb.get_region(reg_name)
+    if region is not None:
+        print(f'Il numero di {key} {prop} {reg_name} è {region[key]}')
+    else:
+        print(f'Non ho informazioni per questa regione')   
     
     
 

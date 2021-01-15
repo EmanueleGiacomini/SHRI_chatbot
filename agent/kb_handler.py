@@ -25,7 +25,7 @@ class KB:
         N=len(kb)
 
         for i in range(N):
-            if kb[i]['regioni']==key:
+            if kb[i]['regione']==key.capitalize():
                 return kb[i]
 
     def get_dato(self,key):

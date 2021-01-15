@@ -9,15 +9,19 @@ from agent.agent import Agent
 speaker = Speaker()
 listener = Listener()
 agent0 = Agent(speaker, listener, './database/kb_01.json')
-
+"""
 print('- Dimmi se in zona rossa si puo andare al cinema')
 agent0.process('Dimmi se in zona rossa si puo andare al cinema')
 print('- Dimmi se in zona gialla si puo uscire')
 agent0.process('Dimmi se in zona gialla si puo uscire')
 print('- Dimmi se in zona rossa si puo uscire')
 agent0.process('Dimmi se in zona rossa si puo uscire')
+"""
+#print("Dimmi la popolazione del lazio")
+#agent0.process("Dimmi la popolazione del lazio")
+#agent0.kb.save(agent0.kb.kb)
 
-exit(0)
+#exit(0)
 
 speaker.speak('Ciao come posso aiutarti?')
 
