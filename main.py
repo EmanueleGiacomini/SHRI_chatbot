@@ -29,5 +29,3 @@ while a==False:
     agent0.process(command)
 agent0.kb.save(agent0.kb.kb)
 
-    
-

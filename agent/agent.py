@@ -17,6 +17,10 @@ def process_text(in_text: str):
             match = re.search(interaction, in_text)
             if match:
                 # Found a match, analyze the match object
+                if k == 'askzone1':
+                    # If match has more complex terms, we can use this condition to extract
+                    # indexed dictionary
+                    return k, match.groupdict()
                 return k, match.groups() #TODO: return interaction args (ie: Subjects and so on)
     return None, None
 
@@ -67,7 +71,7 @@ class Agent:
         else:
             # Inter and inter_args can be used
             response = self.handle_fn[inter](self.speaker, inter,  inter_args, self.kb)
-        print(response)
+        print('Bot: ' + response)
         self.speaker.speak(response)
 
 
@@ -100,13 +104,15 @@ def agent_autores_cb(speaker, inter, inter_args, kb=None) -> str:
         response = random.choice(response_lst)
     return response
 
-def agent_askzone1_cb(speaker, inter, inter_args, kb=None) -> str:
+def agent_askzone1_cb(speaker, inter, inter_args_dict: dict, kb=None) -> str:
     """
     Query callback. The function uses inter_args to query the KB and extract
     user requested informations.
     """
-    #print(inter_args)
-    # TODO(Fix KB functions and remake this part)
+    # WARNING: This function uses complex inter_args (groupdict), thus first convertion must
+    # be applied
+    # print(inter_args_dict)
+    inter_args = [inter_args_dict['zona'], inter_args_dict['prop'], inter_args_dict['luogo']]
     color_zone = kb.get_zone(inter_args[0])
     location = color_zone[inter_args[2]]
     if location is None:

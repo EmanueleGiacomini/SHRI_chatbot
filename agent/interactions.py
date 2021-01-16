@@ -28,19 +28,16 @@ US_AG_INTERACTION_MAP = {
     'int25': ['Dimmi i sintomi del (coronavirus|covid)','Quali sono i sintomi del (coronavirus|covid)'],
     #'int26': ['Dimmi la popolazione di (.*)', 'Qual è la popolazione di (.*)', 'Quanti abitanti ci sono in (.*)'],
     'greet1': ['Ciao sono (.*)', 'Ciao il mio nome è (.*)'],
-    'askzone1': ['Dimmi se in zona (?P<zona>[a-z]+) si può andare (al|nei) (?P<luogo>[a-z]+)',
-                 'Dimmi se in zona (?P<zona>[a-z]+) si (può) (?P<luogo>[a-z]+)',
-                 'Dimmi se si può andare (al|nei) (?P<luogo>[a-z]+)',
-                 'Dimmi se si (può) (?P<luogo>[a-z]+) in zona (?P<zona>[a-z]+)'],
+    'askzone1': ['Dimmi se in zona (?P<zona>[a-z]+) si può andare (?P<prop>al|nei) (?P<luogo>[a-z]+)',
+                 'Dimmi se in zona (?P<zona>[a-z]+) si (?P<prop>può) (?P<luogo>[a-z]+)',
+                 'Dimmi se si può andare (?P<prop>al|nei) (?P<luogo>[a-z]+) in zona (?P<zona>[a-z]+)',
+                 'Dimmi se si (?P<prop>può) (?P<luogo>[a-z]+) in zona (?P<zona>[a-z]+)'],
     'setzone1': ['In zona (?P<zona>[a-z]+) si può andare (al|nei) (?P<luogo>[a-z]+)'],
     'askregion1':['Quanti sono i (contagiati|guariti|morti) (in|nel) (?P<luogo>[a-z]+)',
                   'Dimmi il numero di (contagiati|guariti|morti) (in|nel) (?P<luogo>[a-z]+)',
                   'Qual è il numero di (contagiati|guariti|morti) (in|nel) (?P<luogo>[a-z]+)'],
     'askregion2':['Dimmi la (popolazione) (di|del) (?P<luogo>[a-z]+)',
                   'Qual è la (popolazione) (di|del) (?P<luogo>[a-z]+)']
-    
-
-    # TODO
 }
 
 US_AG_RESPONSE_MAP = {
@@ -73,5 +70,4 @@ US_AG_RESPONSE_MAP = {
     'greet1': ['Ciao {name}, come posso aiutarti?'],
     'askzone1': [],
     'setzone1': ['Buono a sapersi']
-    #TODO
 }
