@@ -38,7 +38,9 @@ US_AG_INTERACTION_MAP = {
                   'Dimmi il numero di (contagiati|guariti|morti) (in|nel) (?P<luogo>[a-z]+)',
                   'Qual è il numero di (contagiati|guariti|morti) (in|nel) (?P<luogo>[a-z]+)'],
     'askregion2':['Dimmi la (popolazione) (di|del) (?P<luogo>[a-z]+)',
-                  'Qual è la (popolazione) (di|del) (?P<luogo>[a-z]+)']
+                  'Qual è la (popolazione) (di|del) (?P<luogo>[a-z]+)'],
+    'asktasso1':['Qual è il tasso di (mortalità|guarigione|contagio) (della|del|di) (?P<luogo>[a-z]+)',
+                'Dimmi il tasso di (mortalità|guarigione|contagio) (della|del|di) (?P<luogo>[a-z]+)']
 }
 
 US_AG_RESPONSE_MAP = {

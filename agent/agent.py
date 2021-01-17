@@ -60,7 +60,8 @@ class Agent:
             'setzone1':agent_setzone1_cb,
             'setzone2':agent_setzone2_cb,
             'askregion1': agent_askregion1_cb,
-            'askregion2': agent_askregion1_cb
+            'askregion2': agent_askregion1_cb,
+            'asktasso1': agent_asktasso_cb
         }
         self.kb = KB(path)
 
@@ -162,6 +163,26 @@ def agent_askregion1_cb(speaker, inter, inter_args, kb=None) -> str:
         response = f'Non ho informazioni per questa regione'
     return response
     
+def agent_asktasso_cb(speaker, inter, inter_args, kb=None) -> str:
+
+    reg_name = inter_args[2]
+    prop = inter_args[1]
+    key = inter_args[0]
     
+    region = kb.get_region(reg_name)
+    response = None
 
-
+    if key == 'mortalità':
+        tasso = (region['morti']/region['popolazione'])*100
+        tasso = round(tasso,2)
+        response = f'Il tasso di {key} {prop} {reg_name} è {tasso} per cento'
+    elif key == 'guarigione':
+        tasso = (region['guariti']/region['popolazione'])*100
+        tasso = round(tasso,2)
+        response = f'Il tasso di {key} {prop} {reg_name} è {tasso} per cento'
+    elif key == 'contagio':
+        tasso = (region['contagiati']/region['popolazione'])*100
+        tasso = round(tasso,2)
+        response = f'Il tasso di {key} {prop} {reg_name} è {tasso} per cento'
+    
+    return response
