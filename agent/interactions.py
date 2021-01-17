@@ -33,6 +33,7 @@ US_AG_INTERACTION_MAP = {
                  'Dimmi se si può andare (?P<prop>al|nei) (?P<luogo>[a-z]+) in zona (?P<zona>[a-z]+)',
                  'Dimmi se si (?P<prop>può) (?P<luogo>[a-z]+) in zona (?P<zona>[a-z]+)'],
     'setzone1': ['In zona (?P<zona>[a-z]+) si può andare (al|nei) (?P<luogo>[a-z]+)'],
+    'setzone2': ['In zona (?P<zona>[a-z]+) non si può andare (al|nei) (?P<luogo>[a-z]+)'],
     'askregion1':['Quanti sono i (contagiati|guariti|morti) (in|nel) (?P<luogo>[a-z]+)',
                   'Dimmi il numero di (contagiati|guariti|morti) (in|nel) (?P<luogo>[a-z]+)',
                   'Qual è il numero di (contagiati|guariti|morti) (in|nel) (?P<luogo>[a-z]+)'],

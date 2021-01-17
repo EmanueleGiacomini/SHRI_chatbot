@@ -52,12 +52,13 @@ class Agent:
             'int19':agent_autores_cb,
             'int20':agent_autores_cb,
             'int21':agent_autores_cb,
-            'int22':None,
+            'int22':agent_autores_cb,
             'int23':agent_autores_cb,
             'int24':agent_autores_cb,
             'int25':agent_autores_cb,
             'askzone1':agent_askzone1_cb,
             'setzone1':agent_setzone1_cb,
+            'setzone2':agent_setzone2_cb,
             'askregion1': agent_askregion1_cb,
             'askregion2': agent_askregion1_cb
         }
@@ -132,6 +133,16 @@ def agent_setzone1_cb(speaker, inter, inter_args, kb=None) -> str:
     key = inter_args[2]
     kb.set_dato(color_zone, key, 'posso')
     response = f'Salvo che in zona {color_zone}  si puo andare {inter_args[1]} {key}'
+    return response
+
+def agent_setzone2_cb(speaker, inter, inter_args, kb=None) -> str:
+    """
+    Set query callback. The function uses inter_args to write inside the KB
+    """
+    color_zone = inter_args[0]
+    key = inter_args[2]
+    kb.set_dato(color_zone, key, 'non posso')
+    response = f'Salvo che in zona {color_zone} non si puo andare {inter_args[1]} {key}'
     return response
 
 def agent_askregion1_cb(speaker, inter, inter_args, kb=None) -> str:
