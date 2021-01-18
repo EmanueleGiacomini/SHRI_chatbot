@@ -7,7 +7,7 @@ The project is developed by:
   - Emanuele Giacomini
   - Veronica Vulcano
 
-For further information regarding the implementation, you may take a look here.
+For further information regarding the implementation, you may take a look [here](https://github.com/EmanueleGiacomini/SHRI_chatbot/blob/main/report.pdf).
 # Installation Guide
 First install _libespeak1_ for the speech synthetizer and _python-piaudio_ for the Automatic Speech Recognition module.
 
