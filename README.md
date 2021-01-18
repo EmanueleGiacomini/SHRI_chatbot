@@ -24,6 +24,7 @@ If you do not use Anaconda/Miniconda, you can install the project dependencies t
 On the other hand, you can use Anaconda to first build a custom environment, like the following
 
     conda create -n shri python=3.8
+    conda activate shri
     python3 -m pip install SpeechRecognition pyttsx3 
 
 Once all dependencies are installed, you can clone this repository 
