@@ -19,13 +19,13 @@ If any problem occurs with the installation of python(3)-pyaudio, you may follow
     
 If you do not use Anaconda/Miniconda, you can install the project dependencies through _pip_ by running the following command
 
-    python3 -m pip install SpeechRecognition pyttsx3 
+    pip3 install SpeechRecognition pyttsx3 
 
 On the other hand, you can use Anaconda to first build a custom environment, like the following
 
     conda create -n shri python=3.8
     conda activate shri
-    python3 -m pip install SpeechRecognition pyttsx3 
+    pip install SpeechRecognition pyttsx3 
 
 Once all dependencies are installed, you can clone this repository 
 
